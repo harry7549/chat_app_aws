@@ -1,0 +1,49 @@
+"backend working at proxy::https://s6nnkq-5000.csb.app"
+
+14->1611
+backend=100% complate
+===backend has===
+login,signup
+
+login=>
+login has email ,password with auth token with mongo
+singup =>
+singup has name email password confirmpassword image.
+image are using cloudinary to save and store to mongo
+hompage=>
+usercontroller=>
+find user (allUsers),registerUser,authuser
+chatcontroller=>
+accessChat
+createGroupChat
+renameGroup
+addToGroup
+removeFromGroup
+it has a middleware,
+that generate,verify ,next() about the user authrization
+file generatetoken.js is generating token
+
+mongodb is connected
+
+routes are=>
+("/").post(protect, accessChat);
+
+            ("/").get(protect, fetchChats);
+
+            ("/group").post(protect, createGroupeChat);
+
+            ("/rename").put(protect, renameGroup);
+
+            ("/groupadd").put(protect, addToGroup);
+
+            ("/removeFromGroup").put(protect, removeFromGroup)
+
+for more check chatcontroller and chat routes
+
+env:PORT=5000
+MONGO_URI=mongodb+srv://hardik:hardik@harryserver.oclubrm.mongodb.net/ChatApp?retryWrites=true&w=majority
+JWT_SECRET=harry
+
+# here harry is random value
+
+"
